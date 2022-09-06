@@ -1,0 +1,33 @@
+main > .greeting-name {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+}
+.greeting-name > #usersName {
+  width: 30%;
+  font-size: 2.5rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid antiquewhite;
+  outline: none;
+  text-align: center;
+  color: antiquewhite;
+  padding-bottom: 8px;
+}
+
+.editName {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-size: 1.75rem;
+  position: relative;
+  opacity: 0;
+  transition: opacity 150ms ease-in;
+}
+.greeting-name:hover > .editName {
+  opacity: 1;
+}
+.fa-solid.fa-ellipsis {
+  position: absolute;
+  bottom: 100%;
+}

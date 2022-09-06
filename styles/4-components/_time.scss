@@ -1,0 +1,26 @@
+.time-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.time {
+  font-size: 10rem;
+  margin-top: 5rem;
+  opacity: 1;
+  min-width: 900px;
+}
+.timeBtn {
+  margin-top: 5rem;
+}
+.timeBtn.hidden {
+  visibility: hidden;
+}
+.timeBtn.seen {
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 150ms ease-in;
+}
+.time-container:hover > .timeBtn.seen {
+  opacity: 1;
+}

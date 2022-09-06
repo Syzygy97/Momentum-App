@@ -1,0 +1,37 @@
+.focus-task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+.focus-task > i {
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+.focus-task:hover > i {
+  opacity: 1;
+  cursor: pointer;
+}
+.focus-task > #focus {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid antiquewhite;
+  width: 50%;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  outline: none;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 40ch;
+  color: antiquewhite;
+  padding-bottom: 8px;
+}
+main > h2 {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+  letter-spacing: 1.5px;
+}

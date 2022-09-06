@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script
+      src="https://kit.fontawesome.com/0169320a9c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../JS/main.js" type="module"></script>
+    <title>MOMENTum</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="links"></div>
+        <div class="socials">
+          <a
+            href="http://www.youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a
+            href="http://www.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-google"></i>
+          </a>
+          <a
+            href="http://www.twitch.tv"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-twitch"></i>
+          </a>
+        </div>
+        <div class="weather"></div>
+      </header>
+      <main>
+        <div class="time-container">
+          <span class="timeBtn hidden">
+            <i class="fa-solid fa-shuffle"></i>
+          </span>
+          <span class="time"></span>
+          <span class="timeBtn seen" data-time-format="12">
+            <i class="fa-solid fa-shuffle"></i>
+          </span>
+        </div>
+        <h1 class="greeting-name">
+          <span class="greeting"></span>
+          <span class="name" contenteditable="false"></span>
+          <button class="editName"><i class="fa-solid fa-ellipsis"></i></button>
+          <br />
+          <input type="text" id="usersName" maxlength="40" />
+        </h1>
+        <h2 class="focus-title">What is your focus today?</h2>
+        <div class="focus-task">
+          <i id="squareBox" class="fa-regular fa-square"></i>
+          <span id="focus" contenteditable="true"></span>
+          <i id="squareBoxClose" class="fa-solid fa-square-xmark"></i>
+        </div>
+      </main>
+      <footer>
+        <div class="settings" data-dropdown>
+          <button class="settingsBtn" data-dropdown-button>
+            <i class="fa-solid fa-gear" data-dropdown-button></i>
+          </button>
+          <div class="settings-menu">
+            <div class="leftColumn">
+              <ul>
+                <li>General</li>
+                <li>ToDo</li>
+                <li>Photos</li>
+                <li>Quotes</li>
+                <li>About</li>
+              </ul>
+            </div>
+            <div class="rightColumn">
+              <h3>General</h3>
+              <p>Customize your dashboard</p>
+              <h5>SHOW</h5>
+              <ul>
+                <li>
+                  <span class="setting-name">Clock</span>
+                  <span class="toggle-slider" data-clock-toggle>
+                    <i class="indicator" data-clock-indicator></i>
+                  </span>
+                </li>
+                <li>
+                  <span class="setting-name">Focus</span>
+                  <span class="toggle-slider" data-focus-toggle>
+                    <i class="indicator" data-focus-indicator></i>
+                  </span>
+                </li>
+                <li>
+                  <span class="setting-name">Greeting</span>
+                  <span class="toggle-slider" data-greeting-toggle>
+                    <i class="indicator" data-greeting-indicator></i>
+                  </span>
+                </li>
+                <li>
+                  <span class="setting-name">Quotes</span>
+                  <span class="toggle-slider" data-quotes-toggle>
+                    <i class="indicator" data-quotes-indicator></i>
+                  </span>
+                </li>
+                <li>
+                  <span class="setting-name">Socials</span>
+                  <span class="toggle-slider" data-socials-toggle>
+                    <i class="indicator" data-socials-indicator></i>
+                  </span>
+                </li>
+                <li>
+                  <span class="setting-name">Todo</span>
+                  <span class="toggle-slider" data-todo-toggle>
+                    <i class="indicator" data-todo-indicator></i>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="quotes">
+          <div class="quoteContent">
+            <i class="fa-solid fa-quote-left"></i>
+            <h4 class="quote-content"></h4>
+            <i class="fa-solid fa-quote-right"></i>
+          </div>
+          <div class="featuresAndAuthors">
+            <i id="sound" class="fa-solid fa-volume-high"></i>
+            <button class="newQuoteBtn">New Quote</button>
+            <div class="quoteAuthor">
+              <span>--</span>
+              <h5 class="author"></h5>
+            </div>
+          </div>
+        </div>
+        <div class="toDo">
+          <button class="toDoBtn">ToDo</button>
+          <div class="todo-menu">
+            <div class="all-list">
+              <h2 class="task-list-title">My lists</h2>
+              <ul class="task-list" data-lists></ul>
+              <label>Add new list</label>
+              <form action="" data-new-list-form>
+                <input
+                  type="text"
+                  class="new list"
+                  data-new-list-input
+                  placeholder="new list name"
+                />
+                <button class="btn list" aria-label="create new list">+</button>
+              </form>
+            </div>
+            <div class="todo-list" data-task-container>
+              <div class="todo-header">
+                <h2 class="list-title" data-list-title></h2>
+                <p class="task-count" data-task-count></p>
+              </div>
+              <div class="todo-body">
+                <div class="tasks" data-tasks></div>
+                <div class="new-task-creator">
+                  <label>Add new task</label><br />
+                  <form action="" data-new-task-form>
+                    <input
+                      type="text"
+                      class="new task"
+                      data-new-task-input
+                      placeholder="new task name"
+                    />
+                    <button class="btn taskBtn" aria-label="create new task">
+                      +
+                    </button>
+                  </form>
+                </div>
+                <div class="delete-task">
+                  <button class="btn delete" data-clear-complete-tasks-button>
+                    Clear completed task
+                  </button>
+                  <button class="btn delete" data-delete-list-button>
+                    Delete list
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" />
+        <label>
+          <span class="custom-checkbox"></span>
+        </label>
+      </div>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+@font-face {
+  font-family: rockSalt;
+  src: url(../Fonts/Rock_Salt/RockSalt-Regular.ttf);
+}
+@font-face {
+  font-family: raleway;
+  src: url(../Fonts/Raleway/static/Raleway-SemiBold.ttf);
+}
+@font-face {
+  font-family: handwriting;
+  src: url(../Fonts/Shadows_Into_Light_Two/ShadowsIntoLightTwo-Regular.ttf);
+}
+
+@import "./3-layout/_resetter.scss";
+
+@import "./2-base/header.scss";
+@import "./2-base/main.scss";
+@import "./2-base/footer.scss";
+
+@import "./4-components/time";
+@import "./4-components/greetingName";
+@import "./4-components/focus";
+@import "./4-components/settings";
+@import "./4-components/quotes";
+@import "./4-components/todo";

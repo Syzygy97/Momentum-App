@@ -1,0 +1,127 @@
+footer > .settings {
+  padding: 4.5rem 0 0 0.5rem;
+  position: relative;
+}
+
+.settingsBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  transform: rotate(0) scale(0.9);
+  transition: transform 300ms ease-in-out;
+}
+.settingsBtn:hover {
+  opacity: 0.7;
+}
+.settings.active > .settingsBtn {
+  transform: rotate(30deg) scale(1.2);
+}
+
+.settings-menu {
+  position: absolute;
+  color: white;
+  width: 35rem;
+  height: 25rem;
+  padding: 0.75rem;
+  bottom: 50%;
+  border-radius: 8px;
+  background-color: #0d181acb;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+.settings-menu > .leftColumn li {
+  cursor: pointer;
+}
+.settings.active > .settingsBtn + .settings-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.settings-menu li {
+  list-style: none;
+}
+.leftColumn {
+  padding: 0.5rem 0;
+}
+.leftColumn > ul > li {
+  padding: 0.5rem 0;
+}
+.rightColumn {
+  padding: 1rem 0 1rem 1rem;
+  overflow-y: auto;
+}
+.rightColumn > h3 {
+  margin-bottom: 0.25rem;
+}
+.rightColumn > p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.rightColumn > h5 {
+  margin-bottom: 0.75rem;
+}
+.rightColumn > ul > li {
+  padding: 0.5rem 0;
+  position: relative;
+}
+.rightColumn li::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 2px solid grey;
+}
+.rightColumn > ul > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-slider {
+  color: white;
+}
+.toggle-slider {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  margin-right: 1rem;
+  width: 2.5rem;
+  height: 1.25rem;
+  border-radius: 1.25rem;
+  background: rgb(4, 131, 36);
+  box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.4),
+    inset -2px -2px 8px rgba(0, 0, 0, 0.4);
+}
+.indicator {
+  position: absolute;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  bottom: -12%;
+  background: linear-gradient(to top, rgb(70, 70, 70), rgb(241, 241, 241));
+  transform: translateX(1.2rem) scale(1.1);
+  transition: transform 300ms ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5),
+    inset 0 2px 2px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 2px rgba(255, 255, 255, 0.2);
+}
+.slider-off {
+  transform: translateX(-0.2rem) scale(1.1);
+  background: linear-gradient(to top, rgb(70, 70, 70), rgb(241, 241, 241));
+}
+.slider-red-background {
+  background: rgb(231, 29, 29);
+}
+.hiddenState {
+  opacity: 0;
+  pointer-events: none;
+}

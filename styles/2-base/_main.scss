@@ -1,0 +1,16 @@
+main {
+  height: calc(100vh * 0.75);
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50% 25% 12.5% 12.5%;
+}
+main > * {
+  text-align: center;
+  width: 100%;
+}
+main > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

@@ -1,0 +1,269 @@
+.toDo {
+  position: relative;
+  color: white;
+}
+
+.todo-list {
+  overflow-y: auto;
+}
+
+.todo-menu {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background-color: #0d181acb;
+  bottom: 60%;
+  border-radius: 8px;
+  right: 10%;
+  width: 35rem;
+  height: 20rem;
+  padding: 0.75rem;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
+.toDoBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0 0.5rem 0.5rem 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 200ms ease-in-out;
+  font-size: 1.25rem;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 5px 5px 10px black;
+  font-family: raleway;
+}
+
+.toDoBtn:hover {
+  transform: scale(1.2);
+}
+
+.todo-menu > .all-list {
+  border-right: 2px solid white;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.todo-menu form {
+  display: flex;
+  margin: 0.5rem 0;
+  gap: 0.75rem;
+}
+
+.todo-menu label {
+  font-size: 1.2rem;
+}
+
+.all-list > h2,
+.todo-header {
+  margin-bottom: 0.7rem;
+}
+.all-list > h2 {
+  position: relative;
+}
+.all-list > h2::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 95%;
+  background: grey;
+  bottom: -20%;
+  left: 0;
+}
+
+.all-list > ul {
+  line-height: 1.75rem;
+  list-style: circle;
+  padding-left: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+.all-list > ul > li {
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-family: raleway;
+}
+
+.all-list > ul > li:hover {
+  opacity: 0.7;
+}
+
+.active-list {
+  font-weight: 900;
+}
+
+.todo-menu > .todo-list {
+  padding-left: 0.75rem;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+.todo-header .list-title {
+  font-family: handwriting;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.todo-header .task-count {
+  font-size: 1rem;
+}
+
+.tasks {
+  line-height: 2rem;
+}
+
+.new {
+  background: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  transition: border-bottom 150ms ease;
+  order: 2;
+  font-weight: 700;
+  padding: 0.25rem;
+}
+
+.new:focus {
+  border-bottom-width: 3px;
+}
+
+.new:focus::placeholder {
+  opacity: 0.5;
+}
+
+.new-task-creator {
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  color: white;
+  font-weight: 900;
+  transition: opacity 300ms ease-out;
+}
+
+.btn.list,
+.btn.taskBtn {
+  font-size: 1.1rem;
+}
+
+.btn:hover {
+  opacity: 0.5;
+}
+
+[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.task label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  position: relative;
+  cursor: pointer;
+  font-family: handwriting;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.task {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.task::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -25%;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.new.task {
+  margin-bottom: 0;
+}
+
+.custom-checkbox {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: transform 300ms ease-out;
+}
+
+.task:hover .custom-checkbox,
+[type="checkbox"]:focus + label .custom-checkbox {
+  transform: scale(1.3);
+  border-color: rgb(19, 94, 19);
+}
+
+.task:hover label,
+[type="checkbox"]:focus + label {
+  font-weight: 700;
+}
+
+[type="checkbox"]:checked + label .custom-checkbox {
+  background: rgb(19, 94, 19);
+  border-color: rgb(19, 94, 19);
+  box-shadow: inset 0 0 0 1.5px white;
+}
+
+[type="checkbox"]:checked + label {
+  opacity: 0.5;
+}
+
+// Cross-out effect
+
+.task label::after {
+  content: "";
+  position: absolute;
+  left: 1.4rem;
+  right: 0;
+  height: 2px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease-in;
+}
+
+[type="checkbox"]:checked + label::after {
+  transform: scaleX(1);
+}
+
+.delete-task {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn.delete {
+  opacity: 0.5;
+  transition: opacity 200ms ease-out;
+  transition: color 200ms ease;
+}
+
+.btn.delete:hover {
+  color: red;
+  opacity: 0.75;
+}

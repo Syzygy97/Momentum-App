@@ -1,0 +1,10 @@
+header > .socials {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.socials > a {
+  color: white;
+  font-size: 2rem;
+}
